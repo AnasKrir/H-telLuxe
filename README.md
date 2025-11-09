@@ -3,11 +3,10 @@
 ![.NET](https://img.shields.io/badge/.NET%208-512BD4)
 ![C#](https://img.shields.io/badge/C%23-239120?logo=csharp)
 ![Razor Pages](https://img.shields.io/badge/Razor%20Pages-8A2BE2)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-4-purple)
 ![SQL Server](https://img.shields.io/badge/Database-SQL%20Server-red)
 ![Docker](https://img.shields.io/badge/Docker-Enabled-0db7ed)
 ![Architecture](https://img.shields.io/badge/Pattern-MVC-green)
-![Status](https://img.shields.io/badge/Status-In%20Development-orange)
 
 Application web développée en **.NET Core MVC (C#)** permettant la gestion complète d’un **hôtel** : chambres, réservations, services, clients, paiements…
 
