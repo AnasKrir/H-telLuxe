@@ -1,0 +1,112 @@
+## --- OS / éditeur ---
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# JetBrains Rider / IDE divers
+.idea/
+*.sln.iml
+
+## --- .NET / build ---
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+[Ll]ogs/
+out/
+artifacts/
+TestResults/
+*.VisualState.xml
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.cache/
+*.ilk
+*.pdb
+*.mdb
+
+# Publish / packages
+publish/
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+*.tmp
+
+# Coverage
+coverage/
+*.coverage
+*.coveragexml
+.coverage
+.coveragexml
+
+# Resharper / analyzers
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# T4 / CodeGen
+*.TransformLogs
+
+# Profiling / dumps
+*.psess
+*.vsp
+*.vspx
+*.sap
+*.edi
+*.dmp
+
+## --- ASP.NET Core ---
+# Configs sensibles (on garde appsettings.json, on ignore Dev/local)
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.local.json
+secrets.json
+
+# Static web assets cache
+wwwroot/lib/**/.cache/
+.staticwebassets.runtime.json
+staticwebassets.build.json
+
+# EF Core (on garde les migrations dans Git)
+# !Migrations/
+
+## --- Front (si présent) ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+package-lock.json
+dist/
+build/
+
+## --- Docker ---
+docker-compose.override.yml
+**/.dockerignore
+*.pid
+
+## --- Others ---
+*.swp
+*.swx
+*.orig
+*.rej
+
+# SSL dev certs
+*.pfx
+*.p12
+
+# Local tools
+.local/
+tools/
