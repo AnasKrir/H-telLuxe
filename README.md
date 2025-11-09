@@ -7,6 +7,7 @@
 ![SQL Server](https://img.shields.io/badge/Database-SQL%20Server-red)
 ![Docker](https://img.shields.io/badge/Docker-Enabled-0db7ed)
 ![Architecture](https://img.shields.io/badge/Pattern-MVC-green)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
 Application web développée en **.NET Core MVC (C#)** permettant la gestion complète d’un **hôtel** : chambres, réservations, services, clients, paiements…
 
@@ -147,8 +148,6 @@ Ou via VS Code
 
 Projet sous licence MIT.<br/>
 ✅ Libre d’utiliser, modifier et distribuer.
-
----
 
 © 2024 — KRIR Anas & EL YOURI Adam & MACHHOUR Ismail
 
