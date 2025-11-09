@@ -103,7 +103,7 @@ dotnet restore
 #### ➡️ Configurer la base de données dans `appsettings.json` :
 ```
 "ConnectionStrings": {
-  "DefaultConnection": "Server=localhost,1433;Database=HotelDB;User Id=sa;Password=Password;"
+  "DefaultConnection": "Server=localhost,1433;Database=HotelDB;User Id=sa;Password=xxxxxx;"
 }
 ```
 
