@@ -1,0 +1,17 @@
+@model Client
+
+<h1>Supprimer un client</h1>
+
+<p>Êtes-vous sûr de vouloir supprimer ce client ?</p>
+
+<div>
+    <h3>@Model.Nom @Model.Prenom</h3>
+    <p>Email : @Model.Email</p>
+    <p>Téléphone : @Model.Telephone</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Confirmer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

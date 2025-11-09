@@ -1,0 +1,19 @@
+@model Chambre
+
+<h1>Supprimer la chambre</h1>
+
+<p>Êtes-vous sûr de vouloir supprimer cette chambre ?</p>
+
+<div>
+    <h3>Type : @Model.Type</h3>
+    <p>Capacité : @Model.Capacite</p>
+    <p>Tarif par nuit : @Model.TarifParNuit €</p>
+    <p>Disponibilité : @Model.Disponibilite</p>
+    <p>État de maintenance : @Model.EtatMaintenance</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Confirmer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

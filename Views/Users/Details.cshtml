@@ -1,0 +1,29 @@
+﻿@model User
+
+@{
+    ViewData["Title"] = "Détails de l'Utilisateur";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-white">
+        <h4 class="mb-0">Détails de l'Utilisateur</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Email</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
+            <dt class="col-sm-3">Mot de passe</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Password)</dd>
+            <dt class="col-sm-3">Rôle</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Role)</dd>
+        </dl>
+        <div class="mt-4">
+            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">
+                <i class="fas fa-edit"></i> Modifier
+            </a>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Retour à la liste
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+@model Client
+
+<h1>Modifier les informations du client</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label asp-for="Nom"></label>
+        <input asp-for="Nom" />
+        <span asp-validation-for="Nom"></span>
+    </div>
+    <div>
+        <label asp-for="Prenom"></label>
+        <input asp-for="Prenom" />
+        <span asp-validation-for="Prenom"></span>
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label asp-for="Telephone"></label>
+        <input asp-for="Telephone" />
+        <span asp-validation-for="Telephone"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

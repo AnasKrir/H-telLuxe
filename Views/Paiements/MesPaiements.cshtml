@@ -1,0 +1,25 @@
+@model IEnumerable<Paiement>
+
+<h1>Mes Paiements</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Montant</th>
+            <th>Date</th>
+            <th>Mode de paiement</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var paiement in Model)
+        {
+            <tr>
+                <td>@paiement.Montant €</td>
+                <td>@paiement.DatePaiement.ToShortDateString()</td>
+                <td>@paiement.ModePaiement</td>
+                <td>@paiement.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>

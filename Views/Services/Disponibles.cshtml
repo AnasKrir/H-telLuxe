@@ -1,0 +1,25 @@
+@model IEnumerable<Service>
+
+<h1>Services disponibles</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nom du service</th>
+            <th>Tarif</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var service in Model)
+        {
+            <tr>
+                <td>@service.NomService</td>
+                <td>@service.Tarif €</td>
+                <td>@service.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-secondary">Retour à la liste complète</a>

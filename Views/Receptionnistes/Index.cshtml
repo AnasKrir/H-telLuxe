@@ -1,0 +1,32 @@
+@model IEnumerable<Receptionniste>
+
+<h1>Liste des réceptionnistes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Téléphone</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var receptionniste in Model)
+        {
+            <tr>
+                <td>@receptionniste.Nom</td>
+                <td>@receptionniste.Prenom</td>
+                <td>@receptionniste.Email</td>
+                <td>@receptionniste.Telephone</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@receptionniste.Id" class="btn btn-primary">Modifier</a>
+                    <a asp-action="Delete" asp-route-id="@receptionniste.Id" class="btn btn-danger">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-success">Ajouter un nouveau réceptionniste</a>

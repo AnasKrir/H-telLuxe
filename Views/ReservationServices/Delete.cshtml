@@ -1,0 +1,17 @@
+@model ReservationService
+
+<h1>Supprimer une réservation de service</h1>
+
+<p>Êtes-vous sûr de vouloir supprimer cette réservation ?</p>
+
+<div>
+    <p>Service : @Model.Service.NomService</p>
+    <p>Client : @Model.Client.Nom @Model.Client.Prenom</p>
+    <p>Date de réservation : @Model.DateReservation.ToShortDateString()</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Confirmer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

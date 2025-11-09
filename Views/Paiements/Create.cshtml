@@ -1,0 +1,35 @@
+@model Paiement
+
+<h1>Ajouter un paiement</h1>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label asp-for="Montant"></label>
+        <input asp-for="Montant" type="number" step="0.01" />
+        <span asp-validation-for="Montant"></span>
+    </div>
+    <div>
+        <label asp-for="DatePaiement"></label>
+        <input asp-for="DatePaiement" type="date" />
+        <span asp-validation-for="DatePaiement"></span>
+    </div>
+    <div>
+        <label asp-for="ModePaiement"></label>
+        <select asp-for="ModePaiement">
+            <option>Carte bancaire</option>
+            <option>Espèces</option>
+            <option>Chèque</option>
+        </select>
+        <span asp-validation-for="ModePaiement"></span>
+    </div>
+    <div>
+        <label asp-for="Status"></label>
+        <select asp-for="Status">
+            <option>Effectué</option>
+            <option>En attente</option>
+        </select>
+        <span asp-validation-for="Status"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Ajouter</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

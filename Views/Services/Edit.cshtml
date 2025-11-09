@@ -1,0 +1,24 @@
+@model Service
+
+<h1>Modifier un service</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label asp-for="NomService"></label>
+        <input asp-for="NomService" />
+        <span asp-validation-for="NomService"></span>
+    </div>
+    <div>
+        <label asp-for="Tarif"></label>
+        <input asp-for="Tarif" />
+        <span asp-validation-for="Tarif"></span>
+    </div>
+    <div>
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description"></textarea>
+        <span asp-validation-for="Description"></span>
+    </div>
+    <button type="submit">Enregistrer les modifications</button>
+</form>

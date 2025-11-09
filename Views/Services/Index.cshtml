@@ -1,0 +1,28 @@
+@model IEnumerable<Service>
+
+<h1>Liste des Services</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Tarif</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var service in Model)
+        {
+            <tr>
+                <td>@service.NomService</td>
+                <td>@service.Tarif</td>
+                <td>@service.Description</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@service.Id">Modifier</a>
+                    <a asp-action="Delete" asp-route-id="@service.Id">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Create">Ajouter un nouveau service</a>

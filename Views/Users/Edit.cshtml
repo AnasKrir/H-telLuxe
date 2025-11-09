@@ -1,0 +1,60 @@
+﻿@model User
+
+@{
+    ViewData["Title"] = "Modifier un Utilisateur";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-white">
+        <h4 class="mb-0">Modifier un Utilisateur</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="Id" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label asp-for="Email" class="control-label">Email</label>
+                        <input asp-for="Email" class="form-control" type="email" placeholder="Entrez l'email de l'utilisateur" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label asp-for="Password" class="control-label">Mot de passe</label>
+                        <input asp-for="Password" class="form-control" type="password" placeholder="Entrez le mot de passe" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label asp-for="Role" class="control-label">Rôle</label>
+                        <select asp-for="Role" class="form-select">
+                            <option value="">Sélectionnez un rôle</option>
+                            <option value="SuperAdmin">SuperAdmin</option>
+                            <option value="Receptionist">Receptionist</option>
+                        </select>
+                        <span asp-validation-for="Role" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group d-flex justify-content-between mt-4">
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-save"></i> Sauvegarder
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Retour à la liste
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

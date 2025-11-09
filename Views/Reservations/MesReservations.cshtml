@@ -1,0 +1,35 @@
+@model IEnumerable<Reservation>
+
+<h1>Mes Réservations</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Chambre</th>
+            <th>Date de début</th>
+            <th>Date de fin</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reservation in Model)
+        {
+            <tr>
+                <td>@reservation.Chambre.Type</td>
+                <td>@reservation.DateDebut.ToShortDateString()</td>
+                <td>@reservation.DateFin.ToShortDateString()</td>
+                <td>@reservation.Status</td>
+                <td>
+                    @if (reservation.Status == "Confirmée")
+                    {
+                        <form asp-action="Annuler" method="post">
+                            <input type="hidden" name="id" value="@reservation.Id" />
+                            <button type="submit" class="btn btn-danger">Annuler</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

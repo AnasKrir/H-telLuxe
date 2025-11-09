@@ -1,0 +1,28 @@
+@model IEnumerable<ProgrammeFidelite>
+
+<h1>Liste des programmes de fidélité</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Client</th>
+            <th>Points</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var programme in Model)
+        {
+            <tr>
+                <td>@programme.Client.Nom @programme.Client.Prenom</td>
+                <td>@programme.Points</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@programme.Id" class="btn btn-primary">Modifier</a>
+                    <a asp-action="Delete" asp-route-id="@programme.Id" class="btn btn-danger">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-success">Ajouter un programme</a>

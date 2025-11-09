@@ -1,0 +1,16 @@
+@model Service
+
+<h1>Supprimer un service</h1>
+<p>Êtes-vous sûr de vouloir supprimer ce service ?</p>
+
+<div>
+    <h3>@Model.NomService</h3>
+    <p>Tarif : @Model.Tarif</p>
+    <p>Description : @Model.Description</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Confirmer</button>
+    <a asp-action="Index">Annuler</a>
+</form>

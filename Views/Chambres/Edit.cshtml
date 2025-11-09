@@ -1,0 +1,48 @@
+@model Chambre
+
+<h1>Modifier la chambre</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label asp-for="Type"></label>
+        <input asp-for="Type" />
+        <span asp-validation-for="Type"></span>
+    </div>
+
+    <div>
+        <label asp-for="Capacite"></label>
+        <input asp-for="Capacite" type="number" />
+        <span asp-validation-for="Capacite"></span>
+    </div>
+
+    <div>
+        <label asp-for="TarifParNuit"></label>
+        <input asp-for="TarifParNuit" type="number" step="0.01" />
+        <span asp-validation-for="TarifParNuit"></span>
+    </div>
+
+    <div>
+        <label asp-for="Disponibilite"></label>
+        <select asp-for="Disponibilite">
+            <option>Disponible</option>
+            <option>Réservée</option>
+            <option>Indisponible</option>
+        </select>
+        <span asp-validation-for="Disponibilite"></span>
+    </div>
+
+    <div>
+        <label asp-for="EtatMaintenance"></label>
+        <select asp-for="EtatMaintenance">
+            <option>Disponible</option>
+            <option>En maintenance</option>
+            <option>Hors service</option>
+        </select>
+        <span asp-validation-for="EtatMaintenance"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

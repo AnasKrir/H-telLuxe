@@ -1,0 +1,28 @@
+@model Client
+
+<h1>Ajouter un nouveau client</h1>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label asp-for="Nom"></label>
+        <input asp-for="Nom" />
+        <span asp-validation-for="Nom"></span>
+    </div>
+    <div>
+        <label asp-for="Prenom"></label>
+        <input asp-for="Prenom" />
+        <span asp-validation-for="Prenom"></span>
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label asp-for="Telephone"></label>
+        <input asp-for="Telephone" />
+        <span asp-validation-for="Telephone"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Ajouter</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

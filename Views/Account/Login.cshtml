@@ -1,0 +1,105 @@
+﻿@model HotelManagementSystem.Models.User
+@{
+    ViewData["Title"] = "Connexion";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Hotel Luxe</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #eceff4, #dfe7f3);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .login-container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            max-width: 420px;
+            width: 100%;
+        }
+
+        .login-container img {
+            width: 140px;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .login-container h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #0066cc, #003d99);
+            border: none;
+            transition: all 0.3s;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(90deg, #004999, #002f73);
+            transform: translateY(-2px);
+        }
+
+        input:focus {
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+            border-color: #0066cc;
+        }
+
+        .form-control {
+            height: 45px;
+            font-size: 1rem;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="~/img/logo.png" alt="Hotel Luxe Logo">
+        <h3>Bienvenue à Hotel Luxe</h3>
+        <form asp-action="Login" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-4 text-start">
+                <label asp-for="Email" class="form-label">Nom d'utilisateur</label>
+                <input asp-for="Email" class="form-control" placeholder="Entrez votre nom d'utilisateur" required>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="mb-4 text-start">
+                <label asp-for="Password" class="form-label">Mot de passe</label>
+                <input asp-for="Password" type="password" class="form-control" placeholder="Entrez votre mot de passe" required>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Se connecter</button>
+        </form>
+        <div class="forgot-password">
+            <a href="#">Mot de passe oublié ?</a>
+        </div>
+        <footer>
+            <p>Pas encore inscrit ? <a href="#">Créer un compte</a></p>
+        </footer>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+@model IEnumerable<Chambre>
+
+<h1>Chambres disponibles</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Capacité</th>
+            <th>Tarif par nuit</th>
+            <th>État de maintenance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var chambre in Model)
+        {
+            <tr>
+                <td>@chambre.Type</td>
+                <td>@chambre.Capacite</td>
+                <td>@chambre.TarifParNuit €</td>
+                <td>@chambre.EtatMaintenance</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-secondary">Retour à la liste complète</a>

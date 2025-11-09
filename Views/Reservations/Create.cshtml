@@ -1,0 +1,28 @@
+@model Reservation
+
+<h1>Ajouter une réservation</h1>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label asp-for="DateDebut"></label>
+        <input asp-for="DateDebut" type="date" />
+        <span asp-validation-for="DateDebut"></span>
+    </div>
+    <div>
+        <label asp-for="DateFin"></label>
+        <input asp-for="DateFin" type="date" />
+        <span asp-validation-for="DateFin"></span>
+    </div>
+    <div>
+        <label asp-for="ClientId"></label>
+        <select asp-for="ClientId" asp-items="ViewBag.Clients"></select>
+        <span asp-validation-for="ClientId"></span>
+    </div>
+    <div>
+        <label asp-for="ChambreId"></label>
+        <select asp-for="ChambreId" asp-items="ViewBag.Chambres"></select>
+        <span asp-validation-for="ChambreId"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Ajouter</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

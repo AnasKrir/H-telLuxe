@@ -1,0 +1,16 @@
+@model ProgrammeFidelite
+
+<h1>Supprimer un programme de fidélité</h1>
+
+<p>Êtes-vous sûr de vouloir supprimer ce programme ?</p>
+
+<div>
+    <p>Points : @Model.Points</p>
+    <p>Client : @Model.Client.Nom @Model.Client.Prenom</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Confirmer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

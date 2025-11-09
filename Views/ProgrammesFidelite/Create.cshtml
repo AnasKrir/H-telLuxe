@@ -1,0 +1,18 @@
+@model ProgrammeFidelite
+
+<h1>Ajouter un programme de fidélité</h1>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label asp-for="Points"></label>
+        <input asp-for="Points" type="number" />
+        <span asp-validation-for="Points"></span>
+    </div>
+    <div>
+        <label asp-for="ClientId"></label>
+        <select asp-for="ClientId" asp-items="ViewBag.Clients"></select>
+        <span asp-validation-for="ClientId"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Ajouter</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<User>
+
+@{
+    ViewData["Title"] = "Liste des Utilisateurs";
+    var hasSearch = !string.IsNullOrEmpty(Context.Request.Query["searchString"]);
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
+        <h4 class="mb-0">Liste des Utilisateurs</h4>
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Ajouter un Utilisateur
+        </a>
+    </div>
+    <div class="card-body">
+        <!-- Barre de recherche avec icône loupe -->
+        <form asp-action="Search" method="get" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="searchString" class="form-control" placeholder="Rechercher un utilisateur..." value="@Context.Request.Query["searchString"]" />
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-outline-secondary">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Bouton "Afficher tous les utilisateurs" (visible uniquement si une recherche est active) -->
+        @if (hasSearch)
+        {
+            <div class="mb-4">
+                <a asp-action="Index" class="btn btn-outline-secondary">
+                    <i class="fas fa-list"></i> Afficher tous les utilisateurs
+                </a>
+            </div>
+        }
+
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Email)</th>
+                        <th>@Html.DisplayNameFor(model => model.Password)</th>
+                        <th>@Html.DisplayNameFor(model => model.Role)</th>
+                        <th class="text-end">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Password)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Role)</td>
+                            <td>
+                                <div class="d-flex justify-content-end gap-2">
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm" title="Détails">
+                                        <i class="fas fa-info-circle"></i>
+                                    </a>
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning btn-sm" title="Modifier">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm" title="Supprimer">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
